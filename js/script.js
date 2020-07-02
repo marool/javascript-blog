@@ -16,7 +16,7 @@ for(let activeLink of activeLinks){
   activeLink.classList.remove('active');
 }
 
-  /* [IN PROGRESS] add class 'active' to the clicked link */
+  /* [DONE] add class 'active' to the clicked link */
 
   clickedElement.classList.add('active');
   console.log('clickedElement:', clickedElement);
@@ -39,7 +39,10 @@ for(let activeArticle of activeArticles){
   const targetArticle = document.querySelector(articleSelector);
   console.log(articleSelector)
 
-  /* add class 'active' to the correct article */
+  /* [DONE] add class 'active' to the correct article */
+
+  targetArticle.classList.add('active');
+
 }
 
 const links = document.querySelectorAll('.titles a');
