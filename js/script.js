@@ -65,6 +65,8 @@ function generateTitleLinks(){
 
   /* for each article */
 
+  const articles = 
+
     /* get the article id */
 
     /* find the title element */
