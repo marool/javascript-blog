@@ -37,12 +37,11 @@ const titleClickHandler = function (event) {
   /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
   const targetArticle = document.querySelector(articleSelector);
-  console.log(articleSelector)
+  console.log(articleSelector);
 
   /* [DONE] add class 'active' to the correct article */
 
   targetArticle.classList.add('active');
-
 }
 
 const optArticleSelector = '.post',
@@ -54,7 +53,7 @@ function generateTitleLinks() {
   /*  [DONE] remove contents of titleList */
 
   const titleList = document.querySelector(optTitleListSelector);
-  console.log(titleList)
+  console.log(titleList);
   titleList.innerHTML = '';
 
   /* [DONE] for each article */
