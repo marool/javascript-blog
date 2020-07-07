@@ -1,3 +1,4 @@
+'use strict';
 /*document.getElementById('test-button').addEventListener('click', function(){
   const links = document.querySelectorAll('.titles a');
   console.log('links:', links);
@@ -81,19 +82,19 @@ function generateTitleLinks() {
 
     html = html + linkHTML;
     console.log(html);
-
-
-
-    titleList.innerHTML = html;
-
-    const links = document.querySelectorAll('.titles a');
-    console.log(links);
-
-    for (let link of links) {
-      link.addEventListener('click', titleClickHandler);
-    }
-
   }
+
+
+  titleList.innerHTML = html;
+
+  const links = document.querySelectorAll('.titles a');
+  console.log(links);
+
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+  }
+
+
 
 }
 generateTitleLinks();
