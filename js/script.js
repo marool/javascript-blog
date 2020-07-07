@@ -110,33 +110,39 @@ function generateTags() {
 
   for (let article of articles) {
 
-  /* find tags wrapper */
+    /* find tags wrapper */
 
-  const tagsWrapper = article.querySelector(optArticleTagsSelector);
-  console.log(tagsWrapper);
+    const tagsWrapper = article.querySelector(optArticleTagsSelector);
+    console.log(tagsWrapper);
 
-  /* make html variable with empty string */
+    /* make html variable with empty string */
 
-  let html = '';
+    let html = '';
 
-  /* get tags from data-tags attribute */
+    /* get tags from data-tags attribute */
 
-  const articleTags = article.getAttribute('data-tags');
-  console.log(articleTags);
+    const articleTags = article.getAttribute('data-tags');
+    console.log(articleTags);
 
-  /* split tags into array */
+    /* split tags into array */
 
-  /* START LOOP: for each tag */
+    const articleTagsArray = articleTags.split(' ');
+    console.log(articleTagsArray);
 
-  /* generate HTML of the link */
+    /* START LOOP: for each tag */
 
-  /* add generated code to html variable */
+    for (let tag of articleTagsArray) {
+      console.log(tag);
 
-  /* END LOOP: for each tag */
+      /* generate HTML of the link */
 
-  /* insert HTML of all the links into the tags wrapper */
+      /* add generated code to html variable */
 
-  /* END LOOP: for every article: */
+      /* END LOOP: for each tag */
+    }
+    /* insert HTML of all the links into the tags wrapper */
+
+    /* END LOOP: for every article: */
+  }
 }
-
 generateTags();
