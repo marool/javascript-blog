@@ -330,26 +330,27 @@ function authorClickHandler(event) {
 
     /* END LOOP: for each active tag link */
 
-
+  }
 
   /* find all tag links with "href" attribute equal to the "href" constant */
 
-
+  const hrefAuthorLinks = document.querySelectorAll('a[href="' + href + '"]');
+  console.log(hrefAuthorLinks);
 
   /* START LOOP: for each found tag link */
 
-
+  for (let hrefAuthorLink of hrefAuthorLinks) {
 
     /* add class active */
 
-
+    hrefAuthorLink.classList.add('active');
 
     /* END LOOP: for each found tag link */
 
+  }
 
+    /* execute function "generateTitleLinks" with article selector as argument */
 
-  /* execute function "generateTitleLinks" with article selector as argument */
+    generateTitleLinks('[data-tags="' + tag + '"]');
 
-  generateTitleLinks('[data-tags="' + tag + '"]');
-
-}
+  }
