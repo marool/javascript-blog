@@ -281,17 +281,18 @@ generateTags();
 function addClickListenersToAuthors() {
   /* find all links to tags */
 
-
+  const authorLinks = document.querySelectorAll('a[href^="#author-"]');
+  console.log(authorLinks);
 
   /* START LOOP: for each link */
 
-
+  for (let authorLink of authorLinks) {
 
     /* add tagClickHandler as event listener for that link */
 
-
+    authorLink.addEventListener('click', authorClickHandler);
 
     /* END LOOP: for each link */
-
+  }
 }
-addClickListenersToTags();
+addClickListenersToAuthors();
