@@ -312,7 +312,7 @@ function authorClickHandler(event) {
 
   /* make a new constant "tag" and extract tag from the "href" constant */
 
-  const author = href.replace('#author-', '');
+  const author = hrefAttribute.replace('#author-', '');
   console.log(author);
 
   /* find all tag links with class active */
@@ -349,8 +349,8 @@ function authorClickHandler(event) {
 
   }
 
-    /* execute function "generateTitleLinks" with article selector as argument */
+  /* execute function "generateTitleLinks" with article selector as argument */
 
-    generateTitleLinks('[data-tags="' + tag + '"]');
+  generateTitleLinks('[data-author="' + author + '"]');
 
-  }
+}
