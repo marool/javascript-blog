@@ -156,7 +156,7 @@ function generateTags() {
 }
 generateTags();
 
-function tagClickHandler(event){
+function tagClickHandler(event) {
   /* prevent default action for this event */
 
   event.preventDefault();
@@ -188,7 +188,7 @@ function tagClickHandler(event){
 
     activeTag.classList.remove('active');
 
-  /* END LOOP: for each active tag link */
+    /* END LOOP: for each active tag link */
 
   }
 
@@ -199,19 +199,25 @@ function tagClickHandler(event){
 
   /* START LOOP: for each found tag link */
 
-    /* add class active */
+  for (let tagLink of tagLinks) { }
+
+  /* add class active */
+
+  tagLink.classList.add('active');
 
   /* END LOOP: for each found tag link */
+
+}
 
   /* execute function "generateTitleLinks" with article selector as argument */
 }
 
-function addClickListenersToTags(){
+function addClickListenersToTags() {
   /* find all links to tags */
 
   /* START LOOP: for each link */
 
-    /* add tagClickHandler as event listener for that link */
+  /* add tagClickHandler as event listener for that link */
 
   /* END LOOP: for each link */
 }
