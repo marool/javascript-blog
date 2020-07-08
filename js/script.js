@@ -277,3 +277,21 @@ function generateAuthors() {
   }
 }
 generateTags();
+
+function addClickListenersToAuthors() {
+  /* find all links to tags */
+
+
+
+  /* START LOOP: for each link */
+
+
+
+    /* add tagClickHandler as event listener for that link */
+
+
+
+    /* END LOOP: for each link */
+
+}
+addClickListenersToTags();
