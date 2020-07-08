@@ -312,19 +312,21 @@ function authorClickHandler(event) {
 
   /* make a new constant "tag" and extract tag from the "href" constant */
 
-
+  const author = href.replace('#author-', '');
+  console.log(author);
 
   /* find all tag links with class active */
 
-
+  const activeAuthorLinks = document.querySelectorAll('a.active[href^="#author-"]');
+  console.log(activeAuthorLinks);
 
   /* START LOOP: for each active tag link */
 
-
+  for (let activeAuthorLink of activeAuthorLinks) {
 
     /* remove class active */
 
-
+    activeAuthorLink.classList.remove('active');
 
     /* END LOOP: for each active tag link */
 
