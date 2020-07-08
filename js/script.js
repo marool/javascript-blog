@@ -218,17 +218,16 @@ function tagClickHandler(event) {
 function addClickListenersToTags() {
   /* find all links to tags */
 
-  const links = document.querySelectorAll('a[href^="#tag-"]');
-  console.log(links);
+  const tagLinks = document.querySelectorAll('a[href^="#tag-"]');
+  console.log(tagLinks);
 
   /* START LOOP: for each link */
 
-  for (let link of links) {
-    console.log(link);
+  for (let tagLink of tagLinks) {
 
     /* add tagClickHandler as event listener for that link */
 
-    link.addEventListener('click', tagClickHandler);
+    tagLinks.addEventListener('click', tagClickHandler);
 
     /* END LOOP: for each link */
   }
