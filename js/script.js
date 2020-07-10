@@ -266,7 +266,7 @@ function generateAuthors() {
 
     /* add generated code to html variable */
 
-    html = html + linkHtml;
+    html = html + linkHTML;
 
     /* insert HTML of all the links into the tags wrapper */
 
@@ -276,7 +276,7 @@ function generateAuthors() {
     /* END LOOP: for every article: */
   }
 }
-generateTags();
+generateAuthors();
 
 function addClickListenersToAuthors() {
   /* find all links to tags */
