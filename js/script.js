@@ -168,8 +168,8 @@ function tagClickHandler(event) {
 
   /* make a new constant "href" and read the attribute "href" of the clicked element */
 
-  const href = clickedElement.getAttribute('href');
-  console.log(href);
+  const hrefAttribute = clickedElement.getAttribute('href');
+  console.log(hrefAttribute);
 
   /* make a new constant "tag" and extract tag from the "href" constant */
 
@@ -195,7 +195,7 @@ function tagClickHandler(event) {
 
   /* find all tag links with "href" attribute equal to the "href" constant */
 
-  const tagLinks = document.querySelectorAll('a[href="' + href + '"]');
+  const tagLinks = document.querySelectorAll('a[href="' + hrefAttribute + '"]');
   console.log(tagLinks);
 
   /* START LOOP: for each found tag link */
@@ -261,7 +261,10 @@ function generateAuthors() {
 
     /* generate HTML of the link */
 
-    const linkHTML = '<a href="#' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
+    const author = articleAuthor.replace('author-', '').replace('-', ' ');
+    console.log(author);
+
+    const linkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + author  + '</span></a></li>';
     console.log(linkHTML);
 
     /* add generated code to html variable */
@@ -270,7 +273,7 @@ function generateAuthors() {
 
     /* insert HTML of all the links into the tags wrapper */
 
-    authorWrapper.innerHTML = html;
+    authorWrapper.insertAdjacentHTML('beforeend', linkHTML);
     console.log(authorWrapper);
 
     /* END LOOP: for every article: */
@@ -308,7 +311,7 @@ function authorClickHandler(event) {
 
   /* make a new constant "href" and read the attribute "href" of the clicked element */
 
-  const href = clickedElement.getAttribute('href');
+  const hrefAttribute = clickedElement.getAttribute('href');
 
   /* make a new constant "tag" and extract tag from the "href" constant */
 
@@ -334,7 +337,7 @@ function authorClickHandler(event) {
 
   /* find all tag links with "href" attribute equal to the "href" constant */
 
-  const hrefAuthorLinks = document.querySelectorAll('a[href="' + href + '"]');
+  const hrefAuthorLinks = document.querySelectorAll('a[href="' + hrefAttribute + '"]');
   console.log(hrefAuthorLinks);
 
   /* START LOOP: for each found tag link */
