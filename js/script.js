@@ -114,6 +114,7 @@ function generateTags() {
     /* find tags wrapper */
 
     const tagsWrapper = article.querySelector(optArticleTagsSelector);
+    tagsWrapper.innerHTML = '';
     console.log(tagsWrapper);
 
     /* make html variable with empty string */
@@ -137,7 +138,7 @@ function generateTags() {
 
       /* generate HTML of the link */
 
-      const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li>';
+      const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li> ';
       console.log(linkHTML);
 
       /* add generated code to html variable */
@@ -261,10 +262,7 @@ function generateAuthors() {
 
     /* generate HTML of the link */
 
-    const author = articleAuthor.replace('author-', '').replace('-', ' ');
-    console.log(author);
-
-    const linkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + author  + '</span></a></li>';
+    const linkHTML = 'by <a href="#author-' + articleAuthor + '"><span>' + articleAuthor  + '</span></a>';
     console.log(linkHTML);
 
     /* add generated code to html variable */
