@@ -357,13 +357,13 @@ function authorClickHandler(event) {
 
   generateTitleLinks('[data-author="' + author + '"]');
 }
-function calculateTagsParams (tags) {
+function calculateTagsParams(tags) {
   const params = {
     max: 0,
     min: 999999
   };
 
-  for(let tag in tags){
+  for (let tag in tags) {
     console.log(tag + ' is used ' + tags[tag] + ' times');
 
     params.max = Math.max(tags[tag], params.max);
@@ -371,6 +371,15 @@ function calculateTagsParams (tags) {
   }
 
   return params;
+}
+
+function calculateTagClass(count, params) {
+
+  const classNumber = Math.floor(((count - params.min) / (params.max - params.min)) * (optCloudClassCount - 1) + 1);
+  console.log(classNumber);
+  console.log(params.min);
+  console.log(params.max);
+  return optCloudClassPrefix + classNumber;
 }
 
 function generateTags() {
@@ -421,7 +430,10 @@ function generateTags() {
   /* [NEW] START LOOP: for each tag in allTags: */
   for (let tag in allTags) {
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>' + '(' + allTags[tag] + ')';
+
+    const tagLinkHTML = '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '"><span>' + tag + '</span></a></li>' + '(' + allTags[tag] + ')';
+
+    allTagsHTML += tagLinkHTML;
   }
   /* [NEW] END LOOP: for each tag in allTags: */
 
