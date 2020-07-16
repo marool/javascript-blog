@@ -52,7 +52,8 @@ const optArticleSelector = '.post',
   optArticleAuthorSelector = '.post-author',
   optTagsListSelector = '.tags.list',
   optCloudClassCount = 5,
-  optCloudClassPrefix = 'tag-size-';
+  optCloudClassPrefix = 'tag-size-',
+  optAuthorsListSelector = '.list.authors';
 
 function generateTitleLinks(customSelector = '') {
 
@@ -240,6 +241,9 @@ function addClickListenersToTags() {
 addClickListenersToTags();
 
 function generateAuthors() {
+  /* [NEW] create a new variable allTags with an empty array */
+  let allAuthors = {};
+
   /* find all articles */
 
   const articles = document.querySelectorAll(optArticleSelector);
@@ -272,6 +276,14 @@ function generateAuthors() {
 
     html = html + linkHTML;
 
+    /* [NEW] check if this link is NOT already in allTags */
+    if (!allAuthors.hasOwnProperty(articleAuthor)) {
+      /* [NEW] add generated code to allTags array */
+      allAuthors[articleAuthor] = 1;
+    } else {
+      allAuthors[articleAuthor]++;
+    }
+
     /* insert HTML of all the links into the tags wrapper */
 
     authorWrapper.insertAdjacentHTML('beforeend', linkHTML);
@@ -279,7 +291,30 @@ function generateAuthors() {
 
     /* END LOOP: for every article: */
   }
+
+  /* [NEW] find list of tags in right column */
+
+  const authorList = document.querySelector(optAuthorsListSelector);
+
+  /* [NEW] create variable for all links HTML code */
+  const authorsParams = calculateTagsParams(allAuthors);
+  console.log('authorsParams:', authorsParams)
+  let allAuthorsHTML = '';
+
+  /* [NEW] START LOOP: for each tag in allTags: */
+  for (let articleAuthor in allAuthors) {
+    /* [NEW] generate code of a link and add it to allTagsHTML */
+
+    const authorLinkHTML = '<li><a class="' + calculateTagClass(allAuthors[articleAuthor], authorsParams) + '" href="#tag-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
+    console.log('authorLinkHTML: ', authorLinkHTML);
+    allAuthorsHTML += authorLinkHTML;
+  }
+  /* [NEW] END LOOP: for each tag in allTags: */
+
+  /*[NEW] add HTML from allTagsHTML to tagList */
+  authorList.innerHTML = allAuthorsHTML;
 }
+
 generateAuthors();
 
 function addClickListenersToAuthors() {
