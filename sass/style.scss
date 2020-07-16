@@ -122,3 +122,34 @@ body {
     margin: 0 10px 0 0;
   }
 }
+
+/* Tags */
+
+.tags li a {
+  text-decoration: none;
+}
+
+.tag-size-1 {
+  font-size: 13px;
+  font-weight: 200;
+}
+
+.tag-size-2 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.tag-size-3 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.tag-size-4 {
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.tag-size-5 {
+  font-size: 33px;
+  font-weight: 400;
+}
