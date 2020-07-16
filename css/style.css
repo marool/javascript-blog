@@ -109,6 +109,15 @@ body {
 }
 
 /* Tags */
+.tags li {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.tags ul {
+  padding: 0;
+}
+
 .tags li a {
   text-decoration: none;
 }
@@ -136,5 +145,6 @@ body {
 .tag-size-5 {
   font-size: 33px;
   font-weight: 400;
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

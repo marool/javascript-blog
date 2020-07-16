@@ -249,8 +249,8 @@ function calculateAuthorsParams(authors) {
   for (let articleAuthor in authors) {
     console.log(articleAuthor + ' is used ' + authors[articleAuthor] + ' times');
 
-    params.max = Math.max(articleAuthor[authors], params.max);
-    params.min = Math.min(articleAuthor[authors], params.min);
+    params.max = Math.max(authors[articleAuthor], params.max);
+    params.min = Math.min(authors[articleAuthor], params.min);
   }
 
   return params;
@@ -329,7 +329,7 @@ function generateAuthors() {
   for (let articleAuthor in allAuthors) {
     /* [NEW] generate code of a link and add it to allTagsHTML */
 
-    const authorLinkHTML = '<li><a class="' + calculateAuthorClass(allAuthors[articleAuthor], authorsParams) + '" href="#tag-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
+    const authorLinkHTML = '<li><a class="' + calculateAuthorClass(allAuthors[articleAuthor], authorsParams) + '" href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
     console.log('authorLinkHTML: ', authorLinkHTML);
     allAuthorsHTML += authorLinkHTML;
   }
