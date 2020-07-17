@@ -341,8 +341,6 @@ function generateAuthors() {
   for (let articleAuthor in allAuthors) {
     /* [NEW] generate code of a link and add it to allTagsHTML */
 
-    const authorLinkHTML = '<li><a class="' + calculateAuthorClass(allAuthors[articleAuthor], authorsParams) + '" href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
-    console.log('authorLinkHTML: ', authorLinkHTML);
     allAuthorsData.authors.push({
       author: articleAuthor,
       count: allAuthors[articleAuthor],
@@ -506,8 +504,6 @@ function generateTags() {
   /* [NEW] START LOOP: for each tag in allTags: */
   for (let tag in allTags) {
     /* [NEW] generate code of a link and add it to allTagsHTML */
-
-    const tagLinkHTML = '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '"><span>' + tag + '</span></a></li>' + '(' + allTags[tag] + ')';
 
     allTagsData.tags.push({
       tag: tag,
